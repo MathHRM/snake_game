@@ -1,0 +1,14 @@
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\bin\Debug\net8.0\terminal_snake_game.exe
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\bin\Debug\net8.0\terminal_snake_game.deps.json
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\bin\Debug\net8.0\terminal_snake_game.runtimeconfig.json
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\bin\Debug\net8.0\terminal_snake_game.dll
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\bin\Debug\net8.0\terminal_snake_game.pdb
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.AssemblyInfoInputs.cache
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.AssemblyInfo.cs
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.csproj.CoreCompileInputs.cache
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.dll
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\refint\terminal_snake_game.dll
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.pdb
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\terminal_snake_game.genruntimeconfig.cache
+C:\Users\MathHRM\Documents\vsCode\Projects\terminal_snake_game\obj\Debug\net8.0\ref\terminal_snake_game.dll
