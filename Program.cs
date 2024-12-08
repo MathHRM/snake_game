@@ -33,7 +33,6 @@
     public static void Draw()
     {
         Console.Clear();
-        bool printed = false;
         for (int i = 0; i <= height; i++)
         {
             for (int j = 0; j <= width; j++)
@@ -52,7 +51,17 @@
                 }
                 else
                 {
-                    Console.Write(" ");
+                    bool printed = false;
+                    for(int k = 0; k < nTail; k++)
+                    {
+                        if(tailX[k] == j && tailY[k] == i)
+                        {
+                            Console.Write("o");
+                            printed = true;
+                        }
+                    }
+                    if(!printed)
+                        Console.Write(" ");
                 }
             }
             Console.WriteLine();
@@ -89,6 +98,27 @@
 
     public static void Logic()
     {
+        int prevX = tailX[0];
+        int prevY = tailY[0];
+        int prev2X, prev2Y;
+        tailX[0] = x;
+        tailY[0] = y;
+
+        for (int i = 1; i < nTail; i++)
+        {
+            prev2X = tailX[i];
+            prev2Y = tailY[i];
+            tailX[i] = prevX;
+            tailY[i] = prevY;
+            prevX = prev2X;
+            prevY = prev2Y;
+
+            if (tailX[i] == x && tailY[i] == y)
+            {
+                gameOver = true;
+            }
+        }
+
         switch (dir)
         {
             case eDirection.LEFT:
