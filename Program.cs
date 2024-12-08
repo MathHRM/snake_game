@@ -11,7 +11,8 @@ class Program
     public static int[] tailY = new int[100];
     public static int nTail = 0;
     public static Random random = new Random();
-    enum eDirection
+    public static bool stopping = false;
+    public enum eDirection
     {
         STOP = 0,
         LEFT,
@@ -19,13 +20,14 @@ class Program
         UP,
         DOWN
     }
+    public static eDirection dir;
 
     public static void Setup()
     {
         Console.Clear();
         x = width / 2;
         y = height / 2;
-        setFruitPosition();
+        SetFruitPosition();
         gameOver = false;
         score = 0;
     }
@@ -33,28 +35,82 @@ class Program
     public static void Draw()
     {
         Console.Clear();
-        for (int i = 0; i < width + 2; i++)
+        bool printed = false;
+        for (int i = 0; i < height + 1; i++)
         {
-            for (int j = 0; j < height; j++)
+            for (int j = 0; j < width + 2; j++)
             {
-                if (i == 0 || j == 0)
+                if (i == 0 || j == 0 || i == height || j == width + 1)
+                {
                     Console.Write("#");
-
+                }
+                else if (x == j && y == i)
+                {
+                    Console.Write("O");
+                }
+                else if (fruitX == j && fruitY == i)
+                {
+                    Console.Write('@');
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
             }
+            Console.WriteLine();
         }
     }
 
     public static void Input()
     {
+        if (Console.KeyAvailable)
+        {
+            switch (Console.ReadKey(true).Key)
+            {
+                case ConsoleKey.LeftArrow:
+                    dir = eDirection.LEFT;
+                    break;
+                case ConsoleKey.RightArrow:
+                    dir = eDirection.RIGHT;
+                    break;
+                case ConsoleKey.UpArrow:
+                    dir = eDirection.UP;
+                    break;
+                case ConsoleKey.DownArrow:
+                    dir = eDirection.DOWN;
+                    break;
+                case ConsoleKey.Escape:
+                    gameOver = true;
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
 
     public static void Logic()
     {
-
+        switch (dir)
+        {
+            case eDirection.LEFT:
+                x--;
+                break;
+            case eDirection.RIGHT:
+                x++;
+                break;
+            case eDirection.UP:
+                y--;
+                break;
+            case eDirection.DOWN:
+                y++;
+                break;
+            default:
+                break;
+        }
     }
 
-    public static void setFruitPosition()
+    public static void SetFruitPosition()
     {
         fruitX = random.Next(1, width);
         fruitY = random.Next(1, height);
@@ -68,6 +124,7 @@ class Program
             Draw();
             Input();
             Logic();
+            Thread.Sleep(100);
         }
     }
 }
