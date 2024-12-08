@@ -1,6 +1,4 @@
-﻿using System;
-
-class Program
+﻿class Program
 {
     public static bool gameOver;
     public static int score = 0;
@@ -36,11 +34,11 @@ class Program
     {
         Console.Clear();
         bool printed = false;
-        for (int i = 0; i < height + 1; i++)
+        for (int i = 0; i <= height; i++)
         {
-            for (int j = 0; j < width + 2; j++)
+            for (int j = 0; j <= width; j++)
             {
-                if (i == 0 || j == 0 || i == height || j == width + 1)
+                if (i == 0 || i == height || j == 0 || j == width)
                 {
                     Console.Write("#");
                 }
@@ -59,6 +57,7 @@ class Program
             }
             Console.WriteLine();
         }
+        Console.WriteLine($"Score: {score}");
     }
 
     public static void Input()
@@ -86,7 +85,6 @@ class Program
                     break;
             }
         }
-
     }
 
     public static void Logic()
@@ -108,6 +106,18 @@ class Program
             default:
                 break;
         }
+        
+        if(x == fruitX && y == fruitY)
+        {
+            score++;
+            SetFruitPosition();
+            nTail++;
+        }
+
+        if(x >= width) x = 1;
+        if(x <= 0) x = width - 2;
+        if(y >= height) y = 1;
+        if(y <= 0) y = height;
     }
 
     public static void SetFruitPosition()
@@ -119,6 +129,7 @@ class Program
     static void Main(string[] args)
     {
         Setup();
+
         while (!gameOver)
         {
             Draw();
