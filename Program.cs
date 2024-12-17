@@ -9,7 +9,6 @@
     public static int[] tailY = new int[100];
     public static int nTail = 0;
     public static Random random = new Random();
-    public static bool stopping = false;
     public enum eDirection
     {
         STOP = 0,
