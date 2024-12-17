@@ -158,6 +158,14 @@
     {
         fruitX = random.Next(1, width);
         fruitY = random.Next(1, height);
+
+        for (int i = 0; i < nTail; i++)
+        {
+            if (fruitX == tailX[i] && fruitY == tailY[i])
+            {
+                SetFruitPosition();
+            }
+        }
     }
 
     static void Main(string[] args)
