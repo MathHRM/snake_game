@@ -52,15 +52,15 @@
                 else
                 {
                     bool printed = false;
-                    for(int k = 0; k < nTail; k++)
+                    for (int k = 0; k < nTail; k++)
                     {
-                        if(tailX[k] == j && tailY[k] == i)
+                        if (tailX[k] == j && tailY[k] == i)
                         {
                             Console.Write("o");
                             printed = true;
                         }
                     }
-                    if(!printed)
+                    if (!printed)
                         Console.Write(" ");
                 }
             }
@@ -76,16 +76,20 @@
             switch (Console.ReadKey(true).Key)
             {
                 case ConsoleKey.LeftArrow:
-                    dir = eDirection.LEFT;
+                    if (dir != eDirection.RIGHT)
+                        dir = eDirection.LEFT;
                     break;
                 case ConsoleKey.RightArrow:
-                    dir = eDirection.RIGHT;
+                    if (dir != eDirection.LEFT)
+                        dir = eDirection.RIGHT;
                     break;
                 case ConsoleKey.UpArrow:
-                    dir = eDirection.UP;
+                    if (dir != eDirection.DOWN)
+                        dir = eDirection.UP;
                     break;
                 case ConsoleKey.DownArrow:
-                    dir = eDirection.DOWN;
+                    if (dir != eDirection.UP)
+                        dir = eDirection.DOWN;
                     break;
                 case ConsoleKey.Escape:
                     gameOver = true;
@@ -136,18 +140,18 @@
             default:
                 break;
         }
-        
-        if(x == fruitX && y == fruitY)
+
+        if (x == fruitX && y == fruitY)
         {
             score++;
             SetFruitPosition();
             nTail++;
         }
 
-        if(x >= width) x = 1;
-        if(x <= 0) x = width - 2;
-        if(y >= height) y = 1;
-        if(y <= 0) y = height;
+        if (x >= width) x = 1;
+        if (x <= 0) x = width - 2;
+        if (y >= height) y = 1;
+        if (y <= 0) y = height;
     }
 
     public static void SetFruitPosition()
